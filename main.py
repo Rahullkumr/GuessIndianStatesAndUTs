@@ -4,7 +4,7 @@ import pandas as pd
 screen = turtle.Screen()
 screen.setup(width=775, height=900)
 screen.title('Indian states and UTs game')
-image = 'guessIndia.gif'
+image = 'map_of_India.gif'
 screen.addshape(image)
 turtle.shape(image)
 
