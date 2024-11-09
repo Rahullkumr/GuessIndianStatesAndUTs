@@ -12,17 +12,17 @@ data = pd.read_csv('./states_and_uts.csv')
 all_states = data.state.to_list()
 guessed_states = []
 
-while len(guessed_states) < 50:
-    ans_state = (turtle.textinput(title=f'{len(guessed_states)}/50 States Correct',
-                                  prompt="What's another state's name? ")).title()
+while len(guessed_states) <= 36:
+    ans_state = (turtle.textinput(title=f'{len(guessed_states)}/36 States Correct',
+                                  prompt="What's another name? ")).title()
 
     if ans_state == 'Exit':
-        # states_you_missed.csv
+        # names_you_missed.csv
         missed_states_dict = {
             "Missed States": [state for state in all_states if state not in guessed_states]
         }
         df = pd.DataFrame(missed_states_dict)
-        df.to_csv('./states_you_missed.csv', mode='w')
+        df.to_csv('./names_you_missed.csv', mode='w')
         break
 
     if ans_state in all_states:
@@ -32,5 +32,11 @@ while len(guessed_states) < 50:
         t.penup()
         state_data = data[data['state'] == ans_state]
         t.goto(state_data.x.item(), state_data.y.item())
-        t.write(ans_state, font=("", 10, ''))
+        # t.write(f'▼{ans_state}', font=("", 10, ''))
+        if ans_state == 'Dadra And Nagar Haveli And Daman And Diu':
+            t.write(f'Dadra And Nagar Haveli\nAnd Daman And Diu', font=("", 10, ''))
+        elif ans_state == 'Andaman And Nicobar Islands':
+            t.write(f'Andaman And\nNicobar Islands', font=("", 10, ''))
+        else:
+            t.write(f'▼{ans_state}', font=("", 10, ''))
 

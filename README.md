@@ -1,11 +1,11 @@
 # Indian States and UTs Guessing Game
 
-This is an interactive Python game where users attempt to name all 28 states and 8 Union Territories (UTs) of India. states. The program will show an image of the map of India and ask users to input state and UTs names. If a correct name is entered, it will be displayed on the map. The game also generates a file with the names of any states the player missed.
+This is an interactive Python game where users attempt to name all 28 states and 8 Union Territories (UTs) of India. The program will show an image of the map of India and ask users to input state and UTs names. If a correct name is entered, it will be displayed on the map. The game also generates a file with the names of any states the player missed.
 
 ## Features
 - Displays a map of India with a blank outline of the states and UTs.
 - Allows users to guess states' and UTs' names and shows correct guesses on the map.
-- Generates a `states_you_missed.csv` file listing any states or UTs not guessed during the game.
+- Generates a `names_you_missed.csv` file listing any states or UTs not guessed during the game.
 
 ## Prerequisites
 1. **Python 3.x**: Ensure Python is installed. You can download it from [Python.org](https://www.python.org/).
@@ -50,13 +50,13 @@ python main.py
 2. Type the name of a state or UT and press Enter.
 3. If the state/UT name is correct, it will appear on the map at the state's or UT's location.
 4. Type "Exit" if you want to stop the game early.
-   - When you exit, a `states_you_missed.csv` file will be created in the project directory, listing any name you did not guess.
+   - When you exit, a `names_you_missed.csv` file will be created in the project directory, listing any name you did not guess.
 
 ## Note
 
 - Ensure that `map_of_India.gif` is present in the same directory as the code. If it's missing, the game will not display the background map.
 
 ## Author
-- Created by me, [Rahul Kumar](https://github.com/rahullkumr)
+- Created by me [Rahul Kumar](https://github.com/rahullkumr)
 
 Enjoy learning and challenging yourself with this Indian states and UTs guessing game!
