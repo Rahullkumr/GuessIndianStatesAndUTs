@@ -40,3 +40,4 @@ while len(guessed_states) <= 36:
         else:
             t.write(f'▼{ans_state}', font=("", 10, ''))
 
+turtle.done()
