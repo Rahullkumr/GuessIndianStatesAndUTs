@@ -2,6 +2,14 @@
 
 This is an interactive Python game where users attempt to name all 28 states and 8 Union Territories (UTs) of India. The program will show an image of the map of India and ask users to input state and UTs names. If a correct name is entered, it will be displayed on the map. The game also generates a file with the names of any states the player missed.
 
+   > built using `Python`, `Pandas` and `Turtle`
+
+![final output](./guessIndia.png)
+
+## Checkout the web version of this game [here]()
+
+   > built using `HTML`, `CSS` and `JavaScript`
+
 ## Features
 - Displays a map of India with a blank outline of the states and UTs.
 - Allows users to guess states' and UTs' names and shows correct guesses on the map.

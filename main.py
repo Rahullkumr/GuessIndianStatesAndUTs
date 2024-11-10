@@ -39,5 +39,3 @@ while len(guessed_states) <= 36:
             t.write(f'Andaman And\nNicobar Islands', font=("", 10, ''))
         else:
             t.write(f'▼{ans_state}', font=("", 10, ''))
-
-turtle.done()
