@@ -6,7 +6,7 @@ This is an interactive Python game where users attempt to name all 28 states and
 
 ![final output](./guessIndia.png)
 
-## Checkout the web version of this game [here]()
+## Checkout the web version of this game [Play](https://guessindia.vercel.app/) | [Code](https://github.com/Rahullkumr/GuessIndianStatesAndUTs/tree/web-version)
 
    > built using `HTML`, `CSS` and `JavaScript`
 
