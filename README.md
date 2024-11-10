@@ -7,7 +7,7 @@ This is an interactive game where users attempt to name all 28 states and 8 Unio
 
 ![final UI](./guessIndia_ui.png)
 
-## Let's see how much you score [click here]()
+## Let's see how much you score [click here](https://guessindia.vercel.app/)
 
 ## Features
 - Displays the map of India with a blank outline of the states and UTs.
