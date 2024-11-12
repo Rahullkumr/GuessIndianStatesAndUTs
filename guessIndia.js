@@ -75,45 +75,50 @@ button.addEventListener('click', (e)=>{
             missedStatesBox.style.display = 'flex';
             break;
         }
-        // TODO: HOW WILL U MANAGE REPETATIONS (if one enters same value 2nd and 3rd time, then ?)
+
         if(guessedName === i ){
-            correctlyGuessedNamesList.push(guessedName);
-            let correct_guesses_count = correctlyGuessedNamesList.length
-            correct_guess_heading.innerText = `${correct_guesses_count}/36 Names Correct`;
-            x = statesAndUTs[guessedName][0];
-            y = statesAndUTs[guessedName][1];
-            // span for showing guessed name on the map
-            let guessedNameContainer = document.createElement('span');
-            document.body.append(guessedNameContainer);
-            if(guessedName === 'Dadra And Nagar Haveli And Daman And Diu'){
-                guessedNameContainer.innerHTML = `
-                <span style="
-                    text-align: center;
-                    font-size: 10px;
-                    position: absolute;
-                    top: ${y}px;
-                    left: ${x}px">  ${"Dadra And Nagar Haveli <br/>And Daman And Diu"}
-                </span>`;
-            }else if(guessedName === 'Andaman And Nicobar Islands'){
-                // just for the pin, ye likhna pada
-                guessedNameContainer.innerHTML = `
-                <span style="
-                    font-size: 14px;
-                    position: absolute;
-                    top: ${y}px;
-                    left: ${x}px">  ${guessedName+"📍"};    
-                </span>`;
+            if(correctlyGuessedNamesList.includes(guessedName)){
+                // MANAGE REPETATIONS (if one enters same value 2nd and 3rd time)
+                alert(guessedName+' is already guessed.');
             }else{
-                guessedNameContainer.innerHTML = `
-                <span style="
-                    font-size: 14px;
-                    position: absolute;
-                    top: ${y}px;
-                    left: ${x}px">  ${"📍"+guessedName}
-                </span>`;
+                correctlyGuessedNamesList.push(guessedName);
+                let correct_guesses_count = correctlyGuessedNamesList.length
+                correct_guess_heading.innerText = `${correct_guesses_count}/36 Names Correct`;
+                x = statesAndUTs[guessedName][0];
+                y = statesAndUTs[guessedName][1];
+                // span for showing guessed name on the map
+                let guessedNameContainer = document.createElement('span');
+                document.body.append(guessedNameContainer);
+                if(guessedName === 'Dadra And Nagar Haveli And Daman And Diu'){
+                    guessedNameContainer.innerHTML = `
+                    <span style="
+                        text-align: center;
+                        font-size: 10px;
+                        position: absolute;
+                        top: ${y}px;
+                        left: ${x}px">  ${"Dadra And Nagar Haveli <br/>And Daman And Diu"}
+                    </span>`;
+                }else if(guessedName === 'Andaman And Nicobar Islands'){
+                    // just for the pin, ye likhna pada
+                    guessedNameContainer.innerHTML = `
+                    <span style="
+                        font-size: 14px;
+                        position: absolute;
+                        top: ${y}px;
+                        left: ${x}px">  ${guessedName+"📍"};    
+                    </span>`;
+                }else{
+                    guessedNameContainer.innerHTML = `
+                    <span style="
+                        font-size: 14px;
+                        position: absolute;
+                        top: ${y}px;
+                        left: ${x}px">  ${"📍"+guessedName}
+                    </span>`;
+                }
+                // remove each correctly guessed name from missedNamesList
+                missedNamesList = missedNamesList.filter(val => val !== `${guessedName}`);
             }
-            // remove each correctly guessed name from missedNamesList
-            missedNamesList = missedNamesList.filter(val => val !== `${guessedName}`);
         }
     }
 });
